@@ -10,36 +10,46 @@ alwaysApply: true
 - **Code Quality**: ESLint, Prettier
 - **Version Control**: Git
 - **Containerization**: Docker
-- **Deployment**: Vercel, Google Cloud
 - **CI/CD**: GitHub Actions, GitLab CI
+- **Deployment**: Vercel, Google Cloud
 
 ## Frontend
 
+### Framework
+
+**React.js (Vite.js), Next.js**
+
+### Stack
+
 - **Language**: TypeScript/TSX, CSS
-- **Framework**: React.js (Vite.js), Next.js
 - **Router**: TanStack Router, Next.js App Router
-- **Data Fetching**: TanStack Query, Electric SQL
 - **State Management**: Zustand, React Context
-- **Styling**: Tailwind CSS, Material UI, Framer Motion
-- **UI Components**: ShadCN UI, Radix UI, Material UI
-- **Icons**: Lucide, lucide-animated, LDRS
+- **Web Workers**: useWorker
+- **Data Fetching**: TanStack Query, Electric SQL
 - **Validation**: Zod, React Hook Form
 - **Error Handling**: Effect, try/catch
 - **Internationalization**: React i18next, Next Intl
-- **Observability**: PostHog
+- **Styling**: Tailwind CSS, Material UI, Framer Motion
+- **UI Components**: ShadCN UI, Radix UI, Material UI
+- **Icons**: Lucide, lucide-animated, LDRS
 - **Testing**: React Testing Library, Jest
-- **Utilities**: useWorker
+- **Observability**: PostHog
 
 ## Backend
 
+### Framework
+
+**Fastify**
+
+### Stack
+
 - **Language**: TypeScript, SQL
-- **Framework**: Fastify
 - **Runtime**: Node.js, Bun
 - **Database**: PostgreSQL
 - **ORM**: Prisma
-- **Validation**: Zod
-- **Authentication**: Auth0
-- **Error Handling**: Effect, try/catch
 - **API**: REST, Next.js API Routes
+- **Validation**: Zod
+- **Error Handling**: Effect, try/catch
+- **Authentication**: Auth0
 - **Testing**: Jest
 - **External APIs**: OpenRouter API, Exa API, RapidAPI
