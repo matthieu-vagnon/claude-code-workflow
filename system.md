@@ -1,4 +1,4 @@
 - NEVER write comments/logs unless explicitly requested;
 - ALWAYS respond in French;
-- WHEN implementing complex logic, ALWAYS use `exa:*` MCP to search the web and produce optimized code;
-- WHEN using any dependency, ALWAYS use `context7:*` MCP to access latest docs.
+- WHEN using any dependency, ALWAYS use `context7:*` MCP to access latest docs;
+- WHEN implementing complex logic, ALWAYS use `exa:*` MCP to search the web and produce optimized code.

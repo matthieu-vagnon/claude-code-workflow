@@ -17,11 +17,12 @@ alwaysApply: true
 
 ### Framework
 
-**React.js (Vite.js), Next.js**
+**React.js (Vite.js)**
+**Next.js**
 
-### Stack
+### Dependencies
 
-- **Language**: TypeScript/TSX, CSS
+- **Language**: TypeScript, TSX, CSS
 - **Router**: TanStack Router, Next.js App Router
 - **State Management**: Zustand, React Context
 - **Web Workers**: useWorker
@@ -41,7 +42,7 @@ alwaysApply: true
 
 **Fastify**
 
-### Stack
+### Dependencies
 
 - **Language**: TypeScript, SQL
 - **Runtime**: Node.js, Bun
