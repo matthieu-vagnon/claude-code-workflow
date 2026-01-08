@@ -1,8 +1,3 @@
----
-description: Frontend coding instructions.
-alwaysApply: false
----
-
 # General Coding Instructions
 
 ## Your Role

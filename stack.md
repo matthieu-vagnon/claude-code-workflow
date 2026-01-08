@@ -1,7 +1,3 @@
----
-alwaysApply: true
----
-
 # Project Technical Stack
 
 ## General
@@ -11,7 +7,9 @@ alwaysApply: true
 - **Version Control**: Git
 - **Containerization**: Docker
 - **CI/CD**: GitHub Actions, GitLab CI
+- **Testing**: Vitest
 - **Deployment**: Vercel, Google Cloud
+- **Monitoring**: PostHog, Sentry
 
 ## Frontend
 
@@ -33,9 +31,8 @@ alwaysApply: true
 - **Internationalization**: React i18next, Next Intl
 - **Styling**: Tailwind CSS, Material UI, Framer Motion
 - **UI Components**: ShadCN UI, Radix UI, Material UI
-- **Icons**: Lucide, lucide-animated, LDRS
-- **Testing**: React Testing Library, Jest
-- **Monitoring**: PostHog, Sentry
+- **Icons**: MUI Icons, Lucide, lucide-animated, LDRS
+- **Documentation**: TSDoc
 
 ## Backend
 
@@ -47,11 +44,12 @@ alwaysApply: true
 
 - **Language**: TypeScript, SQL
 - **Runtime**: Node.js, Bun
-- **Database**: PostgreSQL
+- **Database**: PostgreSQL, pgvector
 - **ORM**: Prisma
 - **API**: REST, Next.js API Routes
-- **Validation**: Zod
+- **Validation**: Zod, JsonSchema
 - **Error Handling**: Effect, try/catch
 - **Authentication**: Auth0
-- **Testing**: Jest
-- **External APIs**: OpenRouter API, Exa API, RapidAPI
+- **AI**: OpenRouter API, Exa API, Langchain
+- **External APIs**: RapidAPI
+- **Documentation**: Swagger, TSDoc
