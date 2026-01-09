@@ -37,7 +37,7 @@
 - **Language**: TypeScript
 - **Runtime**: Node.js
 - **Package Manager**: pnpm, npm
-- **API**: REST, Next.js API Routes
+- **API**: REST, GraphQL, Next.js API Routes
 - **Validation**: Zod, JsonSchema
 - **Error Handling**: Effect, try/catch
 - **AI**: OpenRouter API, Exa API, Langchain
@@ -48,6 +48,6 @@
 ## Data
 
 - **Language**: SQL
-- **Database**: PostgreSQL, pgvector
+- **Database**: PostgreSQL, pgvector, MongoDB
 - **ORM**: Prisma
 - **Sync/Offline**: Electric SQL
