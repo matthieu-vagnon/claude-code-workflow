@@ -33,6 +33,7 @@
 
 ## Backend
 
+- **BaaS**: Supabase
 - **Framework**: Fastify, Express, NestJS
 - **Language**: TypeScript
 - **Runtime**: Node.js
