@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./readme-illustration.svg" />
+  <img src="./readme-illustration.png" />
 </div>
 
 - [Claude Code Workflow](#claude-code-workflow)
