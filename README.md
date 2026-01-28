@@ -28,7 +28,7 @@ Configuration and conventions to optimize OpenCode usage on TypeScript/React pro
 ## Project Structure
 
 <div align="center">
-  <img src="./readme-illustration.png" />
+  <img src="./.github/assets/readme-illustration.png" />
 </div><br />
 
 ```
@@ -41,7 +41,7 @@ Configuration and conventions to optimize OpenCode usage on TypeScript/React pro
 │   └── react-hexagonal-architecture.md # Hexagonal architecture
 ├── skills/
 │   ├── readme/            # README generation
-│   └── context-first/     # Context-first implementation strategy
+│   └── implement-within/  # Context-first implementation strategy
 └── agents/                # Custom agents (optional)
 
 AGENTS.md                  # Master rules for all agents
@@ -144,7 +144,7 @@ If you prefer not to use symlinks:
 
 ## Available Skills
 
-| Skill            | Description                                          |
-| ---------------- | ---------------------------------------------------- |
-| `/readme`        | Generates or updates the project README.md           |
-| `/context-first` | Context-first implementation based on provided files |
+| Skill              | Description                                                             |
+| ------------------ | ----------------------------------------------------------------------- |
+| `readme`           | Generates or updates the project README.md                              |
+| `implement-within` | Context-first implementation strategy for modifying only provided files |
