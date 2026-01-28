@@ -50,6 +50,20 @@ Short and impactful description (1-2 sentences).
 - Node.js >= X.X;
 - pnpm/npm.
 
+### Environment Files
+
+#### `.env`
+
+\`\`\`text
+ENV_VAR=
+\`\`\`
+
+#### `.env.local`
+
+\`\`\`text
+ENV_LOCAL_VAR=
+\`\`\`
+
 ### Installation
 
 \`\`\`bash
