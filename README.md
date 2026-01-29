@@ -1,17 +1,3 @@
-- [OpenCode Workflow](#opencode-workflow)
-  - [Features](#features)
-  - [Project Structure](#project-structure)
-  - [Tech Stack Coverage](#tech-stack-coverage)
-  - [Quick Start with Bootstrap](#quick-start-with-bootstrap)
-    - [Usage](#usage)
-    - [Interactive Walkthrough](#interactive-walkthrough)
-    - [What Gets Created](#what-gets-created)
-    - [Rule Filtering](#rule-filtering)
-    - [Symlinks vs Copy](#symlinks-vs-copy)
-  - [Prerequisites](#prerequisites)
-  - [Manual Installation](#manual-installation)
-  - [Available Skills](#available-skills)
-
 # OpenCode Workflow
 
 Configuration and conventions to optimize OpenCode usage on TypeScript/React projects.
@@ -22,31 +8,27 @@ Configuration and conventions to optimize OpenCode usage on TypeScript/React pro
 - Strict TypeScript conventions with recommended patterns
 - Hexagonal architecture for React applications
 - Testing guidelines with Testing Library
-- Custom skills (readme, context-first)
+- Custom skills (readme-writing, implement-within, ts-test-writing)
 - Bootstrap script for easy setup (symlinks or copy)
 
 ## Project Structure
 
-<div align="center">
-  <img src="./.github/assets/readme-illustration.png" />
-</div><br />
-
 ```
 .opencode/
 ├── rules/
-│   ├── project-stack.md              # Supported tech stack
-│   ├── ts-conventions.md             # TypeScript conventions
-│   ├── ts-testing-guidelines.md      # Testing guidelines
-│   ├── react-component-patterns.md   # React component patterns
+│   ├── project-stack.md               # Supported tech stack
+│   ├── ts-conventions.md              # TypeScript conventions
+│   ├── react-conventions.md           # React component patterns
 │   └── react-hexagonal-architecture.md # Hexagonal architecture
 ├── skills/
-│   ├── readme/            # README generation
-│   └── implement-within/  # Context-first implementation strategy
-└── agents/                # Custom agents (optional)
+│   ├── readme-writing/     # README generation
+│   ├── implement-within/   # Context-first implementation strategy
+│   └── ts-test-writing/    # Testing guidelines
+└── agents/                 # Custom agents (optional)
 
-AGENTS.md                  # Master rules for all agents
-opencode.json              # OpenCode configuration
-bootstrap.mjs              # Node.js setup script
+AGENTS.md                   # Master rules for all agents
+opencode.json               # OpenCode configuration
+bootstrap.mjs               # Node.js setup script
 ```
 
 ## Tech Stack Coverage
@@ -68,10 +50,10 @@ The bootstrap script automates the setup process by creating symlinks (or copyin
 
 ```bash
 # Install dependencies (first time only)
-npm install
+pnpm install
 
 # Run the bootstrap script with target path
-npm run bootstrap ../my-project
+pnpm run bootstrap ../my-project
 
 # Or directly with node
 node bootstrap.mjs ~/projects/my-app
@@ -95,10 +77,11 @@ OpenCode Workflow → /Users/you/projects/my-app
 
 Summary
   Rules:         3 linked
-  Skills:        2 linked
+  Skills:        3 linked
   Agents:        0 linked
   AGENTS.md:     linked
   opencode.json: copied
+  .gitignore:    updated
 
 Done
 ```
@@ -131,7 +114,7 @@ Done
 ## Prerequisites
 
 - Node.js >= 18
-- npm or pnpm
+- pnpm or npm
 
 ## Manual Installation
 
@@ -146,5 +129,6 @@ If you prefer not to use symlinks:
 
 | Skill              | Description                                                             |
 | ------------------ | ----------------------------------------------------------------------- |
-| `readme`           | Generates or updates the project README.md                              |
+| `readme-writing`   | Generates or updates the project README.md                              |
 | `implement-within` | Context-first implementation strategy for modifying only provided files |
+| `ts-test-writing`  | Testing guidelines and patterns for TypeScript tests                    |
