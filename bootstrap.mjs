@@ -131,6 +131,28 @@ async function main() {
           initialValue: true,
         }),
 
+      gitignoreMode: ({ results }) => {
+        // Symlinks must be gitignored (GitHub doesn't support symlinks)
+        if (results.useSymlinks) {
+          return Promise.resolve("add");
+        }
+        return p.select({
+          message: "Gitignore handling?",
+          options: [
+            {
+              value: "add",
+              label: "Add to .gitignore",
+              hint: "Add entries to ignore config files",
+            },
+            {
+              value: "exceptions",
+              label: "Create exceptions",
+              hint: "Use negation patterns (!path) to track specific files",
+            },
+          ],
+        });
+      },
+
       tool: () =>
         p.select({
           message: "Select target tool",
@@ -151,6 +173,7 @@ async function main() {
 
   const selectedTechs = config.techs || [];
   const useSymlinks = config.useSymlinks;
+  const gitignoreMode = config.gitignoreMode;
   const selectedTool = TOOLS[config.tool];
   const linkOrCopy = useSymlinks ? createSymlink : copyPath;
 
@@ -243,7 +266,7 @@ async function main() {
   }
 
   // Update .gitignore
-  updateGitignore(targetPath, selectedTool);
+  updateGitignore(targetPath, selectedTool, gitignoreMode);
 
   s.stop("Setup complete");
 
@@ -263,7 +286,8 @@ async function main() {
   for (const targetFile of Object.values(selectedTool.configFiles)) {
     summaryLines.push(`${targetFile}: copied`);
   }
-  summaryLines.push(`.gitignore: updated`);
+  const gitignoreAction = gitignoreMode === "exceptions" ? "exceptions added" : "entries added";
+  summaryLines.push(`.gitignore: ${gitignoreAction}`);
 
   p.note(summaryLines.join("\n"), `${selectedTool.label} Setup`);
 
@@ -318,8 +342,11 @@ function copyPath(source, target) {
 /**
  * Updates or creates the .gitignore file in the target directory
  * to include tool-specific configuration entries.
+ * @param {string} targetPath - The target project directory
+ * @param {object} tool - The selected tool configuration
+ * @param {string} mode - "add" to ignore entries, "exceptions" to use negation patterns
  */
-function updateGitignore(targetPath, tool) {
+function updateGitignore(targetPath, tool, mode) {
   const gitignorePath = path.join(targetPath, ".gitignore");
   const sectionHeader = `# ${tool.label} Configuration`;
   let content = "";
@@ -341,7 +368,14 @@ function updateGitignore(targetPath, tool) {
 
   // Add tool-specific section
   content += sectionHeader + "\n";
-  content += tool.gitignoreEntries.join("\n") + "\n";
+
+  if (mode === "exceptions") {
+    // Use negation patterns to track specific files
+    content += tool.gitignoreEntries.map((entry) => `!${entry}`).join("\n") + "\n";
+  } else {
+    // Default: add entries to ignore
+    content += tool.gitignoreEntries.join("\n") + "\n";
+  }
 
   fs.writeFileSync(gitignorePath, content);
 }
